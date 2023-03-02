@@ -32,6 +32,23 @@ public class PhoneBook {
         return phoneBook;
     }
 
+    public Contact searchByNumberInPhoneBook (String number) {
+        Map<String, List<Contact>> phoneBook = getPhoneBook();
+        Contact foundContact = new Contact("", "");
+        for (Map.Entry<String, List<Contact>> contact: phoneBook.entrySet()) {
+            for (Contact item: contact.getValue()) {
+                if(item.getPhoneNumber().equals(number))
+                foundContact = item;
+            }
+        }
+        if (foundContact.getName().equals("")) {
+            System.out.println("Контакт с номером " + number + " не найден");
+        } else {
+            System.out.println("Найдено одно совпадение: " + foundContact);
+        }
+        return foundContact;
+    }
+
 
     @Override
     public String toString() {
