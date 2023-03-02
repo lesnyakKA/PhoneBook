@@ -21,7 +21,8 @@ public class Main {
         phoneBook.addContact("Friends", new Contact("test2", "12312312312331"));
         phoneBook.addContact("Job", test);
         phoneBook.addContact("Friends", test);
-        phoneBook.searchByNumberInPhoneBook("345345354445");
+        phoneBook.searchByNumberInPhoneBook("12312312312331");
+        phoneBook.searchByNameInGroup("test1");
 
 
         System.out.println(phoneBook);
